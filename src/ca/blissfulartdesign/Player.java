@@ -152,7 +152,8 @@ public class Player {
     public Player() {
         Scanner input = new Scanner(System.in);
         int opt = 0;
-
+        
+        // this seems to be the most effective way of simulating a clear screen in Java
         System.out.println(new String(new char[50]).replace("\0", "\r\n"));
         System.out.println("What is your name?");
         String name = input.nextLine();
