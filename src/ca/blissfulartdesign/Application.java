@@ -6,6 +6,7 @@ public class Application {
         int i = 1;
         int j = 1;
         do {
+            j = 1;
             Player player1 = new Player();
             Scanner input = new Scanner(System.in);
             do {
@@ -16,7 +17,13 @@ public class Application {
                     i = 0;
                     j = 0;
                 } else if (yesNo == 'N' || yesNo == 'n') {
-                    player1.statGen();
+                    System.out.println("(R)eroll stats or start (F)resh?");
+                    char reFresh = input.next().trim().charAt(0);
+                    if (reFresh == 'R' || reFresh == 'r') {
+                        player1.statGen();
+                    } else if (reFresh == 'F' || reFresh == 'f') {
+                        j = 0;
+                    }
                 }
             } while (j == 1) ;
         } while (i == 1);
